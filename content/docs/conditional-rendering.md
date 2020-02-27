@@ -29,10 +29,7 @@ function GuestGreeting(props) {
 ```javascript{3-7,11,12}
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
-    return <UserGreeting />;
-  }
-  return <GuestGreeting />;
+  return isLoggedIn ? <UserGreeting /> : <GuestGreeting />;
 }
 
 ReactDOM.render(
@@ -50,7 +47,7 @@ ReactDOM.render(
 
 你可以使用变量来储存元素。 它可以帮助你有条件地渲染组件的一部分，而其他的渲染部分并不会因此而改变。
 
-观察这两个组件，它们分别代表了注销和登录按钮：
+观察这两个组件，它们分别代表了登录和注销按钮：
 
 ```js
 function LoginButton(props) {
